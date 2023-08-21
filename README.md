@@ -3,4 +3,4 @@
 # Setup
 
 # How to run the tests
-robot -v browser:chrome -d ./results/ tests/
+robot -d ./test/step-by-step/logs/ test/step-by-step/features/test.robot

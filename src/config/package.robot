@@ -6,9 +6,11 @@ Documentation    Dependency manager for automation tests
 Library    SeleniumLibrary
 
 ## Keywords ##
-
+Resource    ../auto/keywords/step-by-step/register_keywords.robot
 
 ## Pages ##
+Resource    ../auto/pages/home_page.robot
+Resource    ../auto/pages/register_page.robot
 
 
 ## Hooks ##

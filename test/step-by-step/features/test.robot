@@ -9,3 +9,6 @@ ${URL}    https://www.automationexercise.com/
 
 
 *** Test Cases ***
+Test Case 1: Register User
+    Verify that home page is visible
+    Navigate to SignUp/Login page

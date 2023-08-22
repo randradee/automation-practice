@@ -17,3 +17,7 @@ Remover propaganda
     IF    ${isVisible} == True
         Click Element    ${POPUP_PROPAGANDA}
     END
+
+Realizar rolagem da tela na vertical
+    [Arguments]    ${DISTANCIA}
+    Execute Javascript    window.scrollTo(0, window.scrollY+${DISTANCIA})

@@ -22,38 +22,43 @@ acessar a página de signup
 
 preencher todos os dados obrigatórios
     [Arguments]    ${DADOS}
-    Set Selenium Speed                 0.2
-    Click Element                      ${GENERO_RB}
-    Scroll Element Into View           ${SIGNUP_SENHA}
-    Input Text                         ${SIGNUP_SENHA}                  ${DADOS.senha}
-    Scroll Element Into View           ${DIA_NASC_CB}
-    Select From List By Value          ${DIA_NASC_CB}                   ${DADOS.dia_nasc}
-    Select From List By Value          ${MES_NASC_CB}                   ${DADOS.mes_nasc}
-    Select From List By Value          ${ANO_NASC_CB}                   ${DADOS.ano_nasc}
-    Scroll Element Into View           ${NEWSLETTER_CHK}
-    Select Checkbox                    ${NEWSLETTER_CHK}
-    Scroll Element Into View           ${RECEIVE_OFFERS_CHK}
-    Select Checkbox                    ${RECEIVE_OFFERS_CHK}
-    Scroll Element Into View           ${SIGNUP_PRIMEIRO_NOME}
-    Input Text                         ${SIGNUP_PRIMEIRO_NOME}          ${DADOS.primeiro_nome}
-    Scroll Element Into View           ${SIGNUP_SOBRENOME}
-    Input Text                         ${SIGNUP_SOBRENOME}              ${DADOS.sobrenome}
-    Scroll Element Into View           ${SIGNUP_EMPRESA}
-    Input Text                         ${SIGNUP_EMPRESA}                ${DADOS.empresa}
-    Scroll Element Into View           ${SIGNUP_ENDERECO_1}
-    Input Text                         ${SIGNUP_ENDERECO_1}             ${DADOS.endereco_linha_1}
-    Scroll Element Into View           ${SIGNUP_ENDERECO_2}
-    Input Text                         ${SIGNUP_ENDERECO_2}             ${DADOS.endereco_linha_2}
-    Scroll Element Into View           ${SIGNUP_PAIS}
-    Select From List By Value          ${SIGNUP_PAIS}                   ${DADOS.pais}
-    Scroll Element Into View           ${SIGNUP_ESTADO}
-    Input Text                         ${SIGNUP_ESTADO}                 ${DADOS.estado}
-    Scroll Element Into View           ${SIGNUP_CEP}
-    Input Text                         ${SIGNUP_CEP}                    ${DADOS.cep}
-    Scroll Element Into View           ${SIGNUP_CELULAR}
-    Input Text                         ${SIGNUP_CELULAR}                ${DADOS.celular}
+    # Obs.: As keywords de Realizar rolagem da tela na vertical são uma gambiarra temporária
+    # para evitar que aconteça Click Element Intercepted, pois a página sobe um elemento de propaganda acima do footer
+    # durante a execução da automação
+    Set Selenium Speed                      0.3
+    Click Element                           ${GENERO_RB}
+    Scroll Element Into View                ${SIGNUP_SENHA}
+    Input Text                              ${SIGNUP_SENHA}                  ${DADOS.senha}
+    Realizar rolagem da tela na vertical    100
+    Select From List By Value               ${DIA_NASC_CB}                   ${DADOS.dia_nasc}
+    Select From List By Value               ${MES_NASC_CB}                   ${DADOS.mes_nasc}
+    Select From List By Value               ${ANO_NASC_CB}                   ${DADOS.ano_nasc}
+    Realizar rolagem da tela na vertical    100
+    Select Checkbox                         ${NEWSLETTER_CHK}
+    Select Checkbox                         ${RECEIVE_OFFERS_CHK}
+    Realizar rolagem da tela na vertical    100
+    Input Text                              ${SIGNUP_PRIMEIRO_NOME}          ${DADOS.primeiro_nome}
+    Realizar rolagem da tela na vertical    100
+    Input Text                              ${SIGNUP_SOBRENOME}              ${DADOS.sobrenome}
+    Realizar rolagem da tela na vertical    100
+    Input Text                              ${SIGNUP_EMPRESA}                ${DADOS.empresa}
+    Realizar rolagem da tela na vertical    100
+    Input Text                              ${SIGNUP_ENDERECO_1}             ${DADOS.endereco_linha_1}
+    Realizar rolagem da tela na vertical    100
+    Input Text                              ${SIGNUP_ENDERECO_2}             ${DADOS.endereco_linha_2}
+    Realizar rolagem da tela na vertical    100
+    Select From List By Value               ${SIGNUP_PAIS}                   ${DADOS.pais}
+    Realizar rolagem da tela na vertical    100
+    Input Text                              ${SIGNUP_ESTADO}                 ${DADOS.estado}
+    Realizar rolagem da tela na vertical    100
+    Input Text                              ${SIGNUP_CIDADE}                 ${DADOS.cidade}
+    Realizar rolagem da tela na vertical    100
+    Input Text                              ${SIGNUP_CEP}                    ${DADOS.cep}
+    Realizar rolagem da tela na vertical    100
+    Input Text                              ${SIGNUP_CELULAR}                ${DADOS.celular}
 
 clicar no botão de criar conta
+    Scroll Element Into View           ${CREATE_ACCOUNT_BTN}
     Click Button                       ${CREATE_ACCOUNT_BTN}
 
 deve mostrar que a conta foi criada com sucesso

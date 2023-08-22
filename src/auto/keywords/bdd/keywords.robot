@@ -12,7 +12,7 @@ que esteja na página de signup/login
     
 preencher o nome e endereço de email
     [Arguments]    ${DADOS}
-    Set Selenium Speed                 0.2
+    Set Selenium Speed                 0.3
     Input Text     ${NEW_USER_NAME}                ${DADOS.nome}
     Input Text     ${NEW_USER_EMAIL}               ${DADOS.email}
 
@@ -58,8 +58,20 @@ preencher todos os dados obrigatórios
     Input Text                              ${SIGNUP_CELULAR}                ${DADOS.celular}
 
 clicar no botão de criar conta
-    Scroll Element Into View           ${CREATE_ACCOUNT_BTN}
-    Click Button                       ${CREATE_ACCOUNT_BTN}
+    Scroll Element Into View                ${CREATE_ACCOUNT_BTN}
+    Click Button                            ${CREATE_ACCOUNT_BTN}
 
 deve mostrar que a conta foi criada com sucesso
-    Wait Until Page Contains           Account Created!
+    Wait Until Page Contains                Account Created!
+
+preencher o endereço de email e a senha
+    [Arguments]    ${DADOS}
+    Set Selenium Speed                      0.3
+    Input Text                              ${LOGIN_EMAIL}                   ${DADOS.email}
+    Input Text                              ${LOGIN_PASSWORD}                ${DADOS.senha}
+
+clicar no botão de realizar login
+    Click Element                           ${LOGIN_BUTTON}
+
+deve exibir o nome do usuário como logado
+    Wait Until Page Contains                ${DADOS.nome}

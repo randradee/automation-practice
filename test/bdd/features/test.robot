@@ -18,3 +18,10 @@ CT01:Realizar registro de novo usuário com sucesso
     E preencher todos os dados obrigatórios        ${DADOS}
     E clicar no botão de criar conta
     Então deve mostrar que a conta foi criada com sucesso
+
+CT02:Realizar login com usuário e senha corretos
+    [Etiquetas]    CT02
+    Dado que esteja na página de signup/login
+    Quando preencher o endereço de email e a senha    ${DADOS}
+    E clicar no botão de realizar login
+    Então deve exibir o nome do usuário como logado

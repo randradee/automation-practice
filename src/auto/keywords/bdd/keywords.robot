@@ -25,7 +25,6 @@ preencher todos os dados obrigatórios
     # Obs.: As keywords de Realizar rolagem da tela na vertical são uma gambiarra temporária
     # para evitar que aconteça Click Element Intercepted, pois a página sobe um elemento de propaganda acima do footer
     # durante a execução da automação
-    Set Selenium Speed                      0.3
     Click Element                           ${GENERO_RB}
     Scroll Element Into View                ${SIGNUP_SENHA}
     Input Text                              ${SIGNUP_SENHA}                  ${DADOS.senha}
@@ -75,3 +74,16 @@ clicar no botão de realizar login
 
 deve exibir o nome do usuário como logado
     Wait Until Page Contains                ${DADOS.nome}
+
+que esteja logado na home page
+    que esteja na página de signup/login
+    preencher o endereço de email e a senha    ${DADOS}
+    clicar no botão de realizar login
+    deve exibir o nome do usuário como logado
+
+clicar no link de excluir conta
+    Click Element                           ${DELETE_ACCOUNT}
+
+deve realizar a exclusão da conta com sucesso
+    # TODO: implementar profile com adblock
+    Wait Until Page Contains                Account Deleted!

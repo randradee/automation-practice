@@ -25,3 +25,9 @@ CT02:Realizar login com usuário e senha corretos
     Quando preencher o endereço de email e a senha    ${DADOS}
     E clicar no botão de realizar login
     Então deve exibir o nome do usuário como logado
+
+CT03:Excluir conta com sucesso
+    [Etiquetas]    CT03
+    Dado que esteja logado na home page
+    Quando clicar no link de excluir conta
+    Então deve realizar a exclusão da conta com sucesso

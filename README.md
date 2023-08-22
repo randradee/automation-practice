@@ -5,10 +5,13 @@
 # Como rodar os testes:
 
 ## BDD
+```bash
 robot -d ./test/bdd/logs/ test/bdd/features/test.robot
-
+```
 ## Step-by-step
+```bash
 robot -d ./test/step-by-step/logs/ test/step-by-step/features/test.robot
+```
 
 # Features
 - [ ] Setup

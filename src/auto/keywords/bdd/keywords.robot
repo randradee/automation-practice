@@ -10,17 +10,17 @@ que esteja na página de signup/login
     Click Link                             ${SIGNUP_LOGIN_ANCHOR}
     Wait Until Element Is Visible          ${NEW_USER_SIGNUP_TEXT}           10
     
-preenche o nome e endereço de email
+preencher o nome e endereço de email
     [Arguments]    ${DADOS}
     Set Selenium Speed                 0.2
     Input Text     ${NEW_USER_NAME}                ${DADOS.nome}
     Input Text     ${NEW_USER_EMAIL}               ${DADOS.email}
 
-acessa a página de signup
+acessar a página de signup
     Click Element    ${SIGNUP_BUTTON}
     Wait Until Page Contains           Enter Account Information
 
-preenche todos os dados obrigatórios
+preencher todos os dados obrigatórios
     [Arguments]    ${DADOS}
     Set Selenium Speed                 0.2
     Click Element                      ${GENERO_RB}
@@ -53,7 +53,7 @@ preenche todos os dados obrigatórios
     Scroll Element Into View           ${SIGNUP_CELULAR}
     Input Text                         ${SIGNUP_CELULAR}                ${DADOS.celular}
 
-clica no botão de criar conta
+clicar no botão de criar conta
     Click Button                       ${CREATE_ACCOUNT_BTN}
 
 deve mostrar que a conta foi criada com sucesso

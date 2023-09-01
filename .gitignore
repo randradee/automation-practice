@@ -1,1 +1,3 @@
 /robot/test/**/logs
+node_modules
+cypress/e2e/*/
